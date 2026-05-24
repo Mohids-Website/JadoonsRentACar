@@ -1,0 +1,488 @@
+/* ============================================
+   HOME PAGE STYLES
+============================================ */
+
+/* ---- HERO ---- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0 60px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg-gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.04) 0%, transparent 50%),
+    linear-gradient(180deg, #0A0A0A 0%, #111111 50%, #0A0A0A 100%);
+}
+
+.hero-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.hero-bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.06);
+}
+.hero-bg-circle-1 {
+  width: 600px; height: 600px;
+  top: 50%; left: 60%;
+  transform: translate(-50%, -50%);
+}
+.hero-bg-circle-2 {
+  width: 400px; height: 400px;
+  top: 50%; left: 60%;
+  transform: translate(-50%, -50%);
+  border-color: rgba(201,168,76,0.1);
+}
+.hero-bg-circle-3 {
+  width: 200px; height: 200px;
+  top: 50%; left: 60%;
+  transform: translate(-50%, -50%);
+  border-color: rgba(201,168,76,0.15);
+  background: rgba(201,168,76,0.03);
+}
+
+.hero-glow {
+  position: absolute;
+  top: 30%;
+  left: 58%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.hero-left {}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+  padding: 8px 16px;
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 50px;
+}
+
+.hero-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.7); }
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5.5vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+}
+
+.hero-title .line-1 { display: block; color: var(--white); }
+.hero-title .line-2 {
+  display: block;
+  color: var(--gold);
+  position: relative;
+}
+.hero-title .line-3 {
+  display: block;
+  color: var(--white);
+  font-style: italic;
+}
+
+.hero-title .line-2::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  border-radius: 2px;
+}
+
+.hero-desc {
+  font-size: 1.05rem;
+  color: var(--white-50);
+  line-height: 1.75;
+  margin-bottom: 40px;
+  max-width: 420px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.hero-trust {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.hero-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--white-50);
+}
+
+.hero-trust-icon { color: var(--gold); font-size: 0.9rem; }
+
+.hero-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-car-showcase {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.hero-car-main {
+  width: 100%;
+  animation: carFloat 4s ease-in-out infinite;
+  filter: drop-shadow(0 30px 60px rgba(201,168,76,0.15));
+}
+
+@keyframes carFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(0.5deg); }
+}
+
+.hero-car-shadow {
+  width: 70%;
+  height: 20px;
+  background: radial-gradient(ellipse, rgba(201,168,76,0.15) 0%, transparent 70%);
+  margin: 0 auto;
+  border-radius: 50%;
+  animation: shadowPulse 4s ease-in-out infinite;
+}
+
+@keyframes shadowPulse {
+  0%, 100% { transform: scaleX(1); opacity: 0.6; }
+  50% { transform: scaleX(0.85); opacity: 0.3; }
+}
+
+.hero-badges {
+  position: absolute;
+  top: -10px;
+  right: -20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hero-badge {
+  background: rgba(10,10,10,0.9);
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 10px;
+  padding: 12px 16px;
+  backdrop-filter: blur(10px);
+  white-space: nowrap;
+}
+
+.hero-badge-value {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.hero-badge-label {
+  font-size: 0.7rem;
+  color: var(--white-50);
+  margin-top: 2px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ---- MARQUEE ---- */
+.marquee-section {
+  padding: 20px 0;
+  background: rgba(201,168,76,0.04);
+  border-top: 1px solid rgba(201,168,76,0.1);
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+  overflow: hidden;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 60px;
+  animation: marquee 20s linear infinite;
+  width: max-content;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--white-50);
+}
+
+.marquee-dot {
+  width: 5px;
+  height: 5px;
+  background: var(--gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ---- FEATURED CARS (HOME) ---- */
+.home-cars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* ---- PROCESS STEPS ---- */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  position: relative;
+}
+
+.process-grid::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.2), rgba(201,168,76,0.2), transparent);
+}
+
+.process-step {
+  text-align: center;
+  position: relative;
+  padding: 20px;
+}
+
+.process-number {
+  width: 60px;
+  height: 60px;
+  background: var(--dark-card);
+  border: 2px solid rgba(201,168,76,0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin: 0 auto 20px;
+  position: relative;
+  z-index: 1;
+  transition: var(--transition);
+}
+
+.process-step:hover .process-number {
+  background: rgba(201,168,76,0.1);
+  border-color: var(--gold);
+  box-shadow: 0 0 25px rgba(201,168,76,0.2);
+}
+
+.process-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.process-desc {
+  font-size: 0.85rem;
+  color: var(--white-50);
+  line-height: 1.7;
+}
+
+/* ---- TESTIMONIAL ---- */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.testimonial-card {
+  background: var(--dark-card);
+  border: 1px solid var(--white-10);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: var(--transition);
+}
+
+.testimonial-card:hover {
+  border-color: rgba(201,168,76,0.25);
+  transform: translateY(-4px);
+}
+
+.testimonial-stars {
+  color: var(--gold);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.testimonial-text {
+  font-size: 0.9rem;
+  color: var(--white-80);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonial-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-dark), var(--dark-3));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gold);
+  border: 1px solid rgba(201,168,76,0.2);
+}
+
+.testimonial-name { font-size: 0.9rem; font-weight: 600; }
+.testimonial-city { font-size: 0.75rem; color: var(--white-50); }
+
+/* ---- CTA SECTION ---- */
+.cta-section {
+  background: linear-gradient(135deg, var(--dark-2) 0%, var(--dark-3) 100%);
+  border-top: 1px solid rgba(201,168,76,0.1);
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+  padding: 90px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 60%);
+}
+
+.cta-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.cta-section p {
+  font-size: 1rem;
+  color: var(--white-50);
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* ---- RESPONSIVE HOME ---- */
+@media (max-width: 1024px) {
+  .hero-content { grid-template-columns: 1fr; gap: 40px; }
+  .hero-right { order: -1; }
+  .hero-badges { top: 0; right: 0; }
+  .home-cars-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-grid::before { display: none; }
+  .testimonial-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .hero { padding: 120px 0 60px; text-align: center; }
+  .hero-actions { justify-content: center; }
+  .hero-trust { justify-content: center; }
+  .hero-desc { margin: 0 auto 40px; }
+  .hero-badges { position: static; flex-direction: row; justify-content: center; margin-top: 20px; }
+  .hero-car-showcase { max-width: 320px; }
+  .home-cars-grid { grid-template-columns: 1fr; }
+  .testimonial-grid { grid-template-columns: 1fr; }
+  .process-grid { grid-template-columns: 1fr 1fr; }
+}

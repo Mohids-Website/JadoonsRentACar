@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Book a car with Jadoons Rent A Car — Quick, easy and hassle-free car rental booking in Abbottabad." />
+  <title>Book a Car | Jadoons Rent A Car</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-logo">Book Now</div>
+  <div class="loader-spinner"></div>
+  <div class="loader-bar"></div>
+</div>
+
+<!-- NAVBAR -->
+<div id="navbar-placeholder"></div>
+<nav>
+
+        <!-- HOME BUTTON ADDED -->
+        <a href="index.html">🏠 Home</a>
+
+      </nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-tag">Easy Booking</div>
+    <h1 class="page-hero-title">Reserve Your <span style="color:var(--gold)">Car</span></h1>
+    <p class="page-hero-subtitle">Fill the form below and we'll confirm your booking within minutes via WhatsApp or phone.</p>
+  </div>
+</section>
+
+<!-- BOOKING SECTION -->
+<section class="section section-darker">
+  <div class="container">
+    <div class="booking-layout">
+
+      <!-- FORM SIDE -->
+      <div>
+        <div style="background:var(--dark-card); border:1px solid rgba(201,168,76,0.15); border-radius:var(--radius-lg); padding:40px; position:relative; overflow:hidden;">
+
+          <!-- Gold top accent -->
+          <div style="position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, var(--gold), transparent);"></div>
+
+          <h2 style="font-family:var(--font-display); font-size:1.6rem; margin-bottom:6px;">Booking Details</h2>
+          <p style="font-size:0.88rem; color:var(--white-50); margin-bottom:32px;">All fields marked with <span style="color:var(--gold)">*</span> are required.</p>
+
+          <!-- SUCCESS MESSAGE -->
+          <div class="success-message" id="successMessage">
+            <div class="success-icon">✅</div>
+            <h3>Booking Request Sent!</h3>
+            <p>Thank you, <strong id="successName"></strong>! Your booking request for <strong id="successCar"></strong> has been received.<br><br>Our team will confirm your reservation within <strong style="color:var(--gold)">30 minutes</strong> via WhatsApp or phone call.</p>
+            <div style="margin-top:32px; display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+              <a href="https://wa.me/923001234567?text=Hi! I just submitted a booking request." target="_blank" class="btn btn-primary">WhatsApp Us 💬</a>
+            </div>
+          </div>
+
+          <!-- FORM -->
+          <form id="bookingForm" novalidate>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Full Name <span class="required">*</span></label>
+                <input type="text" id="name" class="form-control" placeholder="e.g. Ahmed Khan" autocomplete="name" />
+                <div class="form-error" id="nameError">Please enter your full name.</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Phone Number <span class="required">*</span></label>
+                <input type="tel" id="phone" class="form-control" placeholder="e.g. 0300-1234567" autocomplete="tel" />
+                <div class="form-error" id="phoneError">Please enter a valid phone number.</div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">CNIC <span style="color:var(--white-50); font-size:0.75rem;">(Optional)</span></label>
+                <input type="text" id="cnic" class="form-control" placeholder="e.g. 12345-1234567-1" maxlength="15" />
+                <div class="form-error" id="cnicError">Enter CNIC in format: XXXXX-XXXXXXX-X</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Select Car <span class="required">*</span></label>
+                <select id="carSelect" class="form-control">
+                  <option value="">-- Choose a vehicle --</option>
+                  <option value="honda-civic-x">Honda Civic X — Rs 8,000/day</option>
+                  <option value="toyota-yaris">Toyota Yaris — Rs 6,500/day</option>
+                  <option value="toyota-corolla-gli">Toyota Corolla GLi — Rs 7,000/day</option>
+                  <option value="toyota-hilux-revo">Toyota Hilux Revo — Rs 14,000/day</option>
+                  <option value="suzuki-alto">Suzuki Alto — Rs 3,500/day</option>
+                  <option value="suzuki-mehran">Suzuki Mehran — Rs 3,000/day</option>
+                </select>
+                <div class="form-error" id="carError">Please select a vehicle.</div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Pickup Date <span class="required">*</span></label>
+                <input type="date" id="pickupDate" class="form-control" />
+                <div class="form-error" id="pickupDateError">Please select a pickup date.</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Rental Days <span class="required">*</span></label>
+                <select id="rentalDays" class="form-control">
+                  <option value="">-- Select days --</option>
+                  <option value="1">1 Day</option>
+                  <option value="2">2 Days</option>
+                  <option value="3">3 Days</option>
+                  <option value="4">4 Days</option>
+                  <option value="5">5 Days</option>
+                  <option value="7">1 Week (7 Days)</option>
+                  <option value="14">2 Weeks (14 Days)</option>
+                  <option value="30">1 Month (30 Days)</option>
+                </select>
+                <div class="form-error" id="rentalDaysError">Please select rental duration.</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Pickup Location <span class="required">*</span></label>
+              <input type="text" id="pickupLocation" class="form-control" placeholder="e.g. Mandian, Abbottabad or Hotel Name" />
+              <div class="form-error" id="pickupLocationError">Please enter your pickup location.</div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Special Requests <span style="color:var(--white-50); font-size:0.75rem;">(Optional)</span></label>
+              <textarea id="notes" class="form-control" rows="3" placeholder="Any special requirements, e.g. child seat, early morning delivery..." style="resize:vertical;"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="submitBtn" style="width:100%; justify-content:center; padding:16px; font-size:0.95rem;">
+              <span id="submitText">Confirm Booking Request 🚗</span>
+              <span id="submitLoader" style="display:none;">Processing...</span>
+            </button>
+
+            <p style="text-align:center; margin-top:16px; font-size:0.8rem; color:var(--white-50);">By submitting, you agree to our terms. We'll contact you to finalize the booking.</p>
+          </form>
+        </div>
+      </div>
+
+      <!-- SUMMARY SIDE -->
+      <div>
+        <div class="booking-summary">
+          <div class="booking-summary-title">📋 Booking Summary</div>
+
+          <div class="summary-car" id="summaryCarSection">
+            <div class="summary-car-icon" id="summaryCarIcon">🚗</div>
+            <div>
+              <div class="summary-car-name" id="summaryCarName">No car selected</div>
+              <div class="summary-car-rate" id="summaryCarRate">Select a vehicle above</div>
+            </div>
+          </div>
+
+          <div class="pricing-breakdown">
+            <div class="pricing-row">
+              <span>Rate per day</span>
+              <span id="pricePerDay">—</span>
+            </div>
+            <div class="pricing-row">
+              <span>Rental duration</span>
+              <span id="durationDisplay">—</span>
+            </div>
+            <div class="pricing-row">
+              <span>Pickup date</span>
+              <span id="pickupDisplay">—</span>
+            </div>
+            <div class="pricing-row">
+              <span style="font-weight:600;">Total Estimate</span>
+              <span id="totalPrice">Rs —</span>
+            </div>
+          </div>
+
+          <div class="terms-note">
+            <span>📌 Note:</span> This is an estimated total. Final price confirmed upon booking. Fuel not included unless stated. Driver available on request (extra charge).
+          </div>
+        </div>
+
+        <!-- Quick Contact -->
+        <div style="margin-top:24px; background:var(--dark-card); border:1px solid var(--white-10); border-radius:var(--radius); padding:24px;">
+          <div style="font-family:var(--font-display); font-size:1rem; margin-bottom:16px; font-weight:700;">📞 Prefer to Call?</div>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <a href="tel:+923001234567" style="display:flex; align-items:center; gap:10px; color:var(--white-80); font-size:0.88rem; padding:12px; background:var(--dark-3); border-radius:8px; border:1px solid var(--white-10); transition:var(--transition);" onmouseover="this.style.borderColor='rgba(201,168,76,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">📞 +92 300 123 4567</a>
+            <a href="tel:+923119876543" style="display:flex; align-items:center; gap:10px; color:var(--white-80); font-size:0.88rem; padding:12px; background:var(--dark-3); border-radius:8px; border:1px solid var(--white-10); transition:var(--transition);" onmouseover="this.style.borderColor='rgba(201,168,76,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">📞 +92 311 987 6543</a>
+            <a href="https://wa.me/923001234567?text=Hi! I want to book a car." target="_blank" class="btn-whatsapp" style="justify-content:center;">
+              💬 Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<script src="js/main.js"></script>
+<script src="js/components.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // Set min date to today
+  const today = new Date().toISOString().split('T')[0];
+  document.getElementById('pickupDate').min = today;
+
+  // Car prices map
+  const carPrices = {
+    'honda-civic-x': { name: 'Honda Civic X', price: 8000, icon: '🚗' },
+    'toyota-yaris': { name: 'Toyota Yaris', price: 6500, icon: '🚙' },
+    'toyota-corolla-gli': { name: 'Toyota Corolla GLi', price: 7000, icon: '🚗' },
+    'toyota-hilux-revo': { name: 'Toyota Hilux Revo', price: 14000, icon: '🛻' },
+    'suzuki-alto': { name: 'Suzuki Alto', price: 3500, icon: '🚕' },
+    'suzuki-mehran': { name: 'Suzuki Mehran', price: 3000, icon: '🚕' }
+  };
+
+  // Pre-select from URL param
+  const params = new URLSearchParams(window.location.search);
+  const carParam = params.get('car');
+  if (carParam) {
+    const carSelect = document.getElementById('carSelect');
+    // Map id to select value
+    const idMap = {
+      'civic-x': 'honda-civic-x',
+      'yaris': 'toyota-yaris',
+      'corolla-gli': 'toyota-corolla-gli',
+      'hilux-revo': 'toyota-hilux-revo',
+      'alto': 'suzuki-alto',
+      'mehran': 'suzuki-mehran'
+    };
+    const val = idMap[carParam] || carParam;
+    if (carSelect) {
+      carSelect.value = val;
+      updateSummary();
+    }
+  }
+
+  function updateSummary() {
+    const carVal = document.getElementById('carSelect').value;
+    const days = parseInt(document.getElementById('rentalDays').value) || 0;
+    const pickupDate = document.getElementById('pickupDate').value;
+
+    const summaryName = document.getElementById('summaryCarName');
+    const summaryRate = document.getElementById('summaryCarRate');
+    const summaryIcon = document.getElementById('summaryCarIcon');
+    const pricePerDay = document.getElementById('pricePerDay');
+    const durationDisplay = document.getElementById('durationDisplay');
+    const pickupDisplay = document.getElementById('pickupDisplay');
+    const totalPrice = document.getElementById('totalPrice');
+
+    if (carVal && carPrices[carVal]) {
+      const car = carPrices[carVal];
+      summaryName.textContent = car.name;
+      summaryRate.textContent = `Rs ${car.price.toLocaleString()} / day`;
+      summaryIcon.textContent = car.icon;
+      pricePerDay.textContent = `Rs ${car.price.toLocaleString()}`;
+
+      if (days > 0) {
+        durationDisplay.textContent = days + (days === 1 ? ' Day' : ' Days');
+        const total = car.price * days;
+        totalPrice.textContent = `Rs ${total.toLocaleString()}`;
+        totalPrice.style.color = 'var(--gold)';
+      } else {
+        durationDisplay.textContent = '—';
+        totalPrice.textContent = 'Rs —';
+      }
+    } else {
+      summaryName.textContent = 'No car selected';
+      summaryRate.textContent = 'Select a vehicle above';
+      summaryIcon.textContent = '🚗';
+      pricePerDay.textContent = '—';
+      durationDisplay.textContent = '—';
+      totalPrice.textContent = 'Rs —';
+    }
+
+    if (pickupDate) {
+      const d = new Date(pickupDate);
+      pickupDisplay.textContent = d.toLocaleDateString('en-PK', { day: 'numeric', month: 'short', year: 'numeric' });
+    } else {
+      pickupDisplay.textContent = '—';
+    }
+  }
+
+  // Listeners for live summary
+  ['carSelect', 'rentalDays', 'pickupDate'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('change', updateSummary);
+  });
+
+  // CNIC formatter
+  const cnicInput = document.getElementById('cnic');
+  if (cnicInput) {
+    cnicInput.addEventListener('input', function () {
+      let val = this.value.replace(/\D/g, '');
+      if (val.length > 5 && val.length <= 12) val = val.slice(0,5) + '-' + val.slice(5);
+      else if (val.length > 12) val = val.slice(0,5) + '-' + val.slice(5,12) + '-' + val.slice(12,13);
+      this.value = val;
+    });
+  }
+
+  // VALIDATION
+  function showError(id, errId) {
+    document.getElementById(id).classList.add('error');
+    document.getElementById(errId).classList.add('show');
+  }
+  function clearError(id, errId) {
+    const el = document.getElementById(id);
+    if (el) el.classList.remove('error');
+    const err = document.getElementById(errId);
+    if (err) err.classList.remove('show');
+  }
+  function validatePhone(ph) {
+    return /^(\+92|0)[\d\s\-]{9,14}$/.test(ph.replace(/\s/g,''));
+  }
+  function validateCNIC(c) {
+    if (!c) return true; // optional
+    return /^\d{5}-\d{7}-\d$/.test(c);
+  }
+
+  ['name','phone','cnic','carSelect','pickupDate','rentalDays','pickupLocation'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('input', () => clearError(id, id + 'Error'));
+    if (el) el.addEventListener('change', () => clearError(id, id + 'Error'));
+  });
+
+  // FORM SUBMIT
+  const form = document.getElementById('bookingForm');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      let valid = true;
+
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const cnic = document.getElementById('cnic').value.trim();
+      const car = document.getElementById('carSelect').value;
+      const pickup = document.getElementById('pickupDate').value;
+      const days = document.getElementById('rentalDays').value;
+      const location = document.getElementById('pickupLocation').value.trim();
+
+      // Clear all errors first
+      ['name','phone','cnic','carSelect','pickupDate','rentalDays','pickupLocation'].forEach(id => clearError(id, id+'Error'));
+
+      if (!name || name.length < 3) { showError('name', 'nameError'); valid = false; }
+      if (!phone || !validatePhone(phone)) { showError('phone', 'phoneError'); valid = false; }
+      if (cnic && !validateCNIC(cnic)) { showError('cnic', 'cnicError'); valid = false; }
+      if (!car) { showError('carSelect', 'carError'); valid = false; }
+      if (!pickup) { showError('pickupDate', 'pickupDateError'); valid = false; }
+      if (!days) { showError('rentalDays', 'rentalDaysError'); valid = false; }
+      if (!location || location.length < 3) { showError('pickupLocation', 'pickupLocationError'); valid = false; }
+
+      if (!valid) {
+        const firstErr = document.querySelector('.form-control.error');
+        if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      // Show loading state
+      const submitBtn = document.getElementById('submitBtn');
+      const submitText = document.getElementById('submitText');
+      const submitLoader = document.getElementById('submitLoader');
+      submitBtn.disabled = true;
+      submitText.style.display = 'none';
+      submitLoader.style.display = 'inline';
+
+      // Simulate submission
+      setTimeout(() => {
+        form.style.display = 'none';
+        const successMsg = document.getElementById('successMessage');
+        document.getElementById('successName').textContent = name;
+        const carName = carPrices[car] ? carPrices[car].name : car;
+        document.getElementById('successCar').textContent = carName;
+        successMsg.classList.add('show');
+        successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 1500);
+    });
+  }
+
+  // Initial summary
+  updateSummary();
+});
+</script>
+</body>
+</html>

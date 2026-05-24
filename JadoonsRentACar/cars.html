@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description"
+    content="Jadoons Rent A Car Fleet — Honda Civic X, Toyota Yaris, Corolla GLi, Hilux Revo, Suzuki Alto & Mehran available for rental in Abbottabad." />
+
+  <title>Our Fleet | Jadoons Rent A Car</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-logo">Our Fleet</div>
+    <div class="loader-spinner"></div>
+    <div class="loader-bar"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+
+      <div class="logo">
+        Jadoons <span>Rent A Car</span>
+      </div>
+
+      <nav>
+        <a href="index.html">🏠 Home</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="container">
+
+      <div class="page-hero-tag">Premium Vehicles</div>
+
+      <h1 class="page-hero-title">
+        Our <span style="color:var(--gold)">Cars</span>
+      </h1>
+
+      <p class="page-hero-subtitle">
+        From budget-friendly city cars to powerful SUVs —
+        discover the perfect ride for your next journey.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- FILTER -->
+  <section class="section section-darker">
+    <div class="container">
+
+      <div class="filter-tabs" id="filterTabs">
+
+        <button class="filter-tab active" data-filter="all">All Vehicles</button>
+        <button class="filter-tab" data-filter="sedan">Sedans</button>
+        <button class="filter-tab" data-filter="suv">SUV / 4x4</button>
+        <button class="filter-tab" data-filter="economy">Economy</button>
+
+      </div>
+
+      <!-- GRID -->
+      <div class="cars-grid" id="carsGrid"></div>
+
+      <!-- EMPTY STATE -->
+      <div id="emptyState" style="display:none; text-align:center; padding:60px 20px;">
+        <div style="font-size:3rem;">🚗</div>
+        <h3 style="color:var(--white-80); margin-top:10px;">No Cars Found</h3>
+        <p style="color:var(--white-50);">Try another category.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section section-dark">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-tag">Pricing</div>
+        <h2 class="section-title">Simple <span>Pricing</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">All prices are per day (24 hours). No hidden charges.</p>
+      </div>
+
+      <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; min-width:500px;">
+
+          <thead>
+            <tr style="border-bottom:2px solid rgba(201,168,76,0.3);">
+              <th style="padding:16px; color:var(--gold);">Vehicle</th>
+              <th style="padding:16px;">Category</th>
+              <th style="padding:16px;">Per Day</th>
+              <th style="padding:16px;">Fuel</th>
+              <th style="padding:16px;"></th>
+            </tr>
+          </thead>
+
+          <tbody id="pricingTable"></tbody>
+
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="container">
+
+      <h2>Found Your <span style="color:var(--gold)">Perfect Car?</span></h2>
+      <p>Book now before someone else does.</p>
+
+      <div class="cta-actions">
+        <a href="booking.html" class="btn btn-primary">Reserve Now 🚗</a>
+        <a href="contact.html" class="btn btn-outline">Contact Us</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Email: jadoonsrentacar@gmail.com</p>
+  </footer>
+
+  <!-- SCRIPTS (IMPORTANT ORDER) -->
+  <script src="js/data.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- PAGE LOGIC -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const grid = document.getElementById("carsGrid");
+      const tabs = document.querySelectorAll(".filter-tab");
+      const emptyState = document.getElementById("emptyState");
+      const pricingTable = document.getElementById("pricingTable");
+
+      // FIXED RENDER
+      function renderCars(filter) {
+
+        const cars = window.CARS_DATA || [];
+
+        const filtered = filter === "all"
+          ? cars
+          : cars.filter(c => c.category === filter);
+
+        if (filtered.length === 0) {
+          grid.innerHTML = "";
+          emptyState.style.display = "block";
+          return;
+        }
+
+        emptyState.style.display = "none";
+
+        grid.innerHTML = filtered.map(car => renderCarCard(car)).join("");
+      }
+
+      // FILTER BUTTONS
+      tabs.forEach(tab => {
+        tab.addEventListener("click", function () {
+
+          tabs.forEach(t => t.classList.remove("active"));
+          this.classList.add("active");
+
+          renderCars(this.dataset.filter);
+        });
+      });
+
+      // INITIAL LOAD
+      renderCars("all");
+
+      // PRICING TABLE
+      const labels = {
+        sedan: "Sedan",
+        suv: "SUV / 4x4",
+        economy: "Economy"
+      };
+
+      if (pricingTable && window.CARS_DATA) {
+        pricingTable.innerHTML = window.CARS_DATA.map(car => `
+          <tr style="border-bottom:1px solid var(--white-10);">
+            <td style="padding:16px; font-weight:600;">${car.name}</td>
+            <td style="padding:16px; color:var(--white-50);">
+              ${labels[car.category] || car.category}
+            </td>
+            <td style="padding:16px; color:var(--gold); font-weight:700;">
+              Rs ${car.price.toLocaleString()}
+            </td>
+            <td style="padding:16px; color:var(--white-50);">
+              ${car.specs.fuel}
+            </td>
+            <td style="padding:16px;">
+              <a class="btn btn-primary btn-sm" href="booking.html?car=${car.id}">
+                Book
+              </a>
+            </td>
+          </tr>
+        `).join("");
+      }
+
+    });
+  </script>
+
+</body>
+
+</html>

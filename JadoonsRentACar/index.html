@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jadoons Rent A Car - Premium car rental services in Abbottabad. Book Honda Civic, Toyota Yaris, Corolla, Hilux Revo, Suzuki Alto & Mehran." />
+  <title>Jadoons Rent A Car | Premium Car Rental in Abbottabad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-logo">Jadoons</div>
+  <div class="loader-spinner"></div>
+  <div class="loader-bar"></div>
+</div>
+
+<!-- NAVBAR -->
+<div id="navbar-placeholder"></div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-bg-gradient"></div>
+    <div class="hero-bg-grid"></div>
+    <div class="hero-bg-circle hero-bg-circle-1"></div>
+    <div class="hero-bg-circle hero-bg-circle-2"></div>
+    <div class="hero-bg-circle hero-bg-circle-3"></div>
+    <div class="hero-glow"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-dot"></span>
+        Premium Car Rental • Abbottabad
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line-1">Jadoons</span>
+        <span class="line-2">Rent A Car</span>
+        <span class="line-3">Your Journey Awaits</span>
+      </h1>
+
+      <p class="hero-desc">
+        Experience the freedom of the road with our premium fleet. From city commutes to mountain adventures in KPK — we have the perfect car for every journey.
+      </p>
+
+      <div class="hero-actions">
+        <a href="cars.html" class="btn btn-primary">
+          🚗 View Our Fleet
+        </a>
+        <a href="booking.html" class="btn btn-outline">
+          📅 Book Now
+        </a>
+      </div>
+
+      <div class="hero-trust">
+        <div class="hero-trust-item">
+          <span class="hero-trust-icon">✅</span>
+          24/7 Service
+        </div>
+        <div class="hero-trust-item">
+          <span class="hero-trust-icon">✅</span>
+          No Hidden Fees
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-car-showcase">
+        <img src="./hero-cars.png" alt="Car Fleet" class="hero-car-image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track" id="marqueeTrack">
+    <div class="marquee-item"><span class="marquee-dot"></span> Honda Civic X</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Toyota Yaris</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Toyota Corolla GLi</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Toyota Hilux Revo</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Suzuki Alto</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Suzuki Mehran</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Abbottabad</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Premium Rental</div>
+    <!-- Duplicate for seamless loop -->
+    <div class="marquee-item"><span class="marquee-dot"></span> Honda Civic X</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Toyota Yaris</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Toyota Corolla GLi</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Toyota Hilux Revo</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Suzuki Alto</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Suzuki Mehran</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Abbottabad</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Premium Rental</div>
+  </div>
+</div>
+
+<!-- ===================== STATS ===================== -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number" data-target="500" data-suffix="+">0+</div>
+        <div class="stat-label">Happy Customers</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="6" data-suffix="">0</div>
+        <div class="stat-label">Car Models</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="2" data-suffix="">0</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="24" data-suffix="/7">0/7</div>
+        <div class="stat-label">Service Hours</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== FEATURED CARS ===================== -->
+<section class="section section-darker">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Our Fleet</div>
+      <h2 class="section-title">Featured <span>Vehicles</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">Choose from our carefully maintained fleet — from economical city cars to powerful SUVs for mountain roads.</p>
+    </div>
+
+    <div class="home-cars-grid" id="homeCarsGrid">
+      <!-- Rendered by JS -->
+    </div>
+
+    <div style="text-align:center; margin-top: 48px;">
+      <a href="cars.html" class="btn btn-outline">View All Cars →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FEATURES ===================== -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Why Choose Us</div>
+      <h2 class="section-title">Why <span>Jadoons?</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">We're committed to providing you with an exceptional rental experience every single time.</p>
+    </div>
+
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon">🔧</div>
+        <div class="feature-title">Well Maintained</div>
+        <p class="feature-desc">Every car undergoes rigorous servicing and safety checks before each rental to ensure a smooth, safe ride.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon">📍</div>
+        <div class="feature-title">Doorstep Delivery</div>
+        <p class="feature-desc">We bring the car to your location in Abbottabad and surrounding areas. Convenience is our priority.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon">💰</div>
+        <div class="feature-title">Best Rates</div>
+        <p class="feature-desc">Transparent pricing with no hidden charges. Get the best value for your money with flexible rental packages.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon">📞</div>
+        <div class="feature-title">24/7 Support</div>
+        <p class="feature-desc">Our team is available around the clock via phone or WhatsApp to assist you anytime, anywhere.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon">🗺️</div>
+        <div class="feature-title">Local Expertise</div>
+        <p class="feature-desc">Born and bred in KPK, we know the roads inside out. Get tips on the best routes and hidden gems.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOW IT WORKS ===================== -->
+<section class="section section-darker">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Process</div>
+      <h2 class="section-title">Book in <span>4 Easy Steps</span></h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-step fade-up">
+        <div class="process-number">01</div>
+        <div class="process-title">Choose Your Car</div>
+        <p class="process-desc">Browse our fleet and pick the vehicle that suits your needs and budget.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-number">02</div>
+        <div class="process-title">Fill Booking Form</div>
+        <p class="process-desc">Enter your details, rental dates and preferred pickup location.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-number">03</div>
+        <div class="process-title">Get Confirmation</div>
+        <p class="process-desc">We'll confirm your booking via WhatsApp or phone call within minutes.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-number">04</div>
+        <div class="process-title">Enjoy Your Ride</div>
+        <p class="process-desc">Pick up your car or get it delivered and hit the road in style!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Reviews</div>
+      <h2 class="section-title">What Our <span>Customers Say</span></h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Excellent service! The Honda Civic was spotlessly clean and fuel-efficient. The team was responsive and delivered the car to our hotel. Highly recommended!"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AM</div>
+          <div>
+            <div class="testimonial-name">Ahmed Malik</div>
+            <div class="testimonial-city">Islamabad</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Booked the Hilux Revo for a trip to Naran. Powerful, comfortable and well maintained. Jadoons made our family trip truly memorable. Will book again!"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SK</div>
+          <div>
+            <div class="testimonial-name">Sara Khan</div>
+            <div class="testimonial-city">Lahore</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Great rates and even better service. The Corolla GLi was perfect for our 3-day Abbottabad visit. No hidden charges, very honest and professional team."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">FJ</div>
+          <div>
+            <div class="testimonial-name">Fahad Jadoon</div>
+            <div class="testimonial-city">Abbottabad</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<div class="cta-section">
+  <div class="container">
+    <h2>Ready to Hit the <span style="color:var(--gold)">Road?</span></h2>
+    <p>Book your perfect car today — quick, easy and hassle-free.</p>
+    <div class="cta-actions">
+      <a href="booking.html" class="btn btn-primary">Book Now 🚗</a>
+      <a href="https://wa.me/923001234567?text=Hi! I want to rent a car." target="_blank" class="btn btn-outline">WhatsApp Us 💬</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<script src="js/main.js"></script>
+<script src="js/components.js"></script>
+<script>
+  // Render featured cars (first 3)
+  document.addEventListener('DOMContentLoaded', function () {
+    const grid = document.getElementById('homeCarsGrid');
+    if (grid && window.CARS_DATA) {
+      grid.innerHTML = window.CARS_DATA.slice(0, 3).map(car => renderCarCard(car)).join('');
+      // Re-init fade-up for newly added elements
+      const els = grid.querySelectorAll('.fade-up');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+      }, { threshold: 0.1 });
+      els.forEach(el => observer.observe(el));
+    }
+    // Hero car SVG
+    const heroSVG = document.getElementById('hero-car-svg');
+    if (heroSVG && window.getCarSVG) {
+      heroSVG.innerHTML = getCarSVG('civic-x', '#C9A84C');
+      heroSVG.querySelector('svg').style.cssText = 'width:100%;max-width:500px;animation:carFloat 4s ease-in-out infinite;filter:drop-shadow(0 30px 60px rgba(201,168,76,0.2))';
+    }
+  });
+</script>
+</body>
+</html>
